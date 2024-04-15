@@ -7,10 +7,22 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
+      - .:/app/backend
     depends_on:
       - my-database
     command: npm run start:dev
+    networks:
+      - smartgrow-network
+  frontend:
+    build:
+      context: ./frontend/.
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app/frontend
+    depends_on:
+      - backend
     networks:
       - smartgrow-network
   my-database:
@@ -24,7 +36,7 @@ services:
     volumes:
       - ./mongo_data:/data/db
     networks:
-      - smartgrow-network
+      - smartgrow-network    
   emqx:
     user: root
     image: "emqx:latest"

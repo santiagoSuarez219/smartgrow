@@ -24,7 +24,7 @@ Para poder instalar y utilizar Smartgrow, el usuario debe contar con los siguien
 
 
 #### Pasos para la intalacion en Windows 11
-1. 1.	Abrir Docker Desktop y asegurarse de que el motor de Docker este corriendo, para esto el usuario puede ver en la parte inferior izquierda de la ventana de Docker Desktop un indicador verde con el texto Engine running.
+1. Abrir Docker Desktop y asegurarse de que el motor de Docker este corriendo, para esto el usuario puede ver en la parte inferior izquierda de la ventana de Docker Desktop un indicador verde con el texto Engine running.
 2. Abrir WSL y clonar el repositorio de github en la carpeta de su preferencia. Para esto, el usuario puede utilizar el siguiente comando:
 
 ```bash
@@ -90,6 +90,51 @@ sudo docker compose up -d backend
 
 El usuario podra verificar que todo ha salido correctamente abriendo el navegador y colocando la direccion URL: localhost:3000. Debe aparecer el texto *Hello World!*
 
+10.  Acceder al directorio frontend utilizando el siguiente comando: 
+
+```bash
+cd frontend
+```
+
+11. Crear un archivo llamado .env y abrirlo con nano. Para esto, el usuario puede utilizar el siguiente comando:
+
+```bash
+touch .env
+nano .env
+```
+
+12. Copiar y pegar el siguiente contenido en el archivo .env y luego guardar los cambios:
+
+```
+VITE_BROKER_MQTT = ws://emqx:8083/mqtt
+VITE_BACKED_URL = http://backend:3000
+```
+
+Para guardar los cambios y salir del editor de texto, el usuario debe presionar la tecla Ctrl + X, luego confirmar los cambios con Y y luego presionar Enter.
+
+13. Volver al directorio raíz del proyecto utilizando el comando 
+
+```bash
+cd ..
+```
+
+14. Ejecutar el siguiente comando para desplegar el frontend de la aplicación
+
+```bash
+sudo docker compose up -d frontend
+```
+
+El usuario podra verificar que todo ha salido correctamente abriendo el navegador y colocando la direccion URL: localhost:8080. Debe aparecer la pagina de inicio de la aplicación.
+
+Luego, cuando el usuario quiera correr la aplicacion, debe abrir docker desktop, en el menu de la izquierda seleccionar la opcion de contenedores, luego, ubicar el contenedor *appsmartgrow* y en el item de *acciones* seleccionar la opcion de *start* o boton de *play* y de esta manera la aplicacion estara corriendo.
+
+Tambien puede correr la aplicacion utilizando el siguiente comando en la terminal, ubicado en la carpeta raiz del proyecto:
+
+```bash
+sudo docker compose up -d
+```
+
+## Funcionalidades
 
 
 
@@ -104,23 +149,9 @@ El usuario podra verificar que todo ha salido correctamente abriendo el navegado
 
 
 
-
-
-
-
-
-
-
-
-Despliegue del backend y frontend
-
-paso a paso del despliegue, configuracion de las variables de entorno
-
-Como se despliega con vite 
 
 ## Stack Tecnologico
 
-## Funcionalidades
 
 
 ## Funcionamiento
