@@ -2,7 +2,7 @@
 
 ## Sobre Smartgrow
 
-SmartGrow DataControl es un software avanzado diseñado específicamente para la captura y análisis de variables fisiológicas ambientales en cultivos interiores de Cannabis sativa. Este sistema facilita una integración eficiente entre dispositivos inalámbricos y bases de datos de código abierto, priorizando la eficacia energética mediante el empleo de protocolos de comunicación estandarizados como TCP/IP, MQTT, HTTP. La principal finalidad de SmartGrow DataControl es optimizar la recolección de datos esenciales para el estudio detallado de la fisiología del Cannabis sativa, incorporando el uso innovador de ́óptica y tecnologías del Internet de las Cosas (IoT). Este documento detalla principalmente, como el usuario final puede hacer uso del aplicativo, profundiza en aspectos tales como la instalación, los requerimientos de hardware y software y algunos casos de uso.  
+SmartGrow DataControl es un software avanzado diseñado específicamente para la captura y análisis de variables fisiológicas ambientales en cultivos interiores de Cannabis sativa. Este sistema facilita una integración eficiente entre dispositivos inalámbricos y bases de datos de código abierto, priorizando la eficacia energética mediante el empleo de protocolos de comunicación estandarizados como TCP/IP, MQTT, HTTP. La principal finalidad de SmartGrow DataControl es optimizar la recolección de datos esenciales para el estudio detallado de la fisiología del Cannabis sativa, incorporando el uso innovador de ́óptica y tecnologías del Internet de las Cosas (IoT). Este documento detalla principalmente, como el usuario final puede hacer uso del aplicativo, profundiza en aspectos tales como la instalación, los requerimientos de hardware y software y las funcionalidades del sistema.  
 
 ## Repositorio de GitHub
 [Repositorio de github](https://github.com/santiagoSuarez219/smartgrow)
@@ -106,8 +106,8 @@ nano .env
 12. Copiar y pegar el siguiente contenido en el archivo .env y luego guardar los cambios:
 
 ```
-VITE_BROKER_MQTT = ws://emqx:8083/mqtt
-VITE_BACKED_URL = http://backend:3000
+VITE_BROKER_MQTT = ws://localhost:8083/mqtt
+VITE_BACKED_URL = http://localhost:3000
 ```
 
 Para guardar los cambios y salir del editor de texto, el usuario debe presionar la tecla Ctrl + X, luego confirmar los cambios con Y y luego presionar Enter.
@@ -135,26 +135,27 @@ sudo docker compose up -d
 ```
 
 ## Funcionalidades
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Monitorear el estado de las variables ambientales en tiempo real.
+- Monitorear el estado de los actuadores del sistema.
+- Monitorear el estado de las conexiones del sistema.
+- Interacturar con los actuadores del sistema, encendiendo y/o apagando actuadores
+- Interacturar con el sistema de control de Ph y Electroconductividad permitiendo modificar los niveles deseados.
 
 ## Stack Tecnologico
-
-
+- JavaScript
+- Node.js
+- Nest.js
+- MongoDB
+- MQTT
+- Docker
+- React.js
+- Tailwind CSS
 
 ## Funcionamiento
+1. Para monitorear el estado de las variables ambientales en tiempo real, el usuario debe acceder a la pagina de inicio de la aplicación. En el menu de navegacion ubicado en la parte superior  para pantallas grandes y en la parte inferior para pantallas pequeñas como celulares, el usuario podra navegar entre la seccion Hidroponico y Cultivo. En estas secciones, el usuario encontrara valores en tiempo real de las variables ambientales como la temperatura, la humedad, dioxido de carbono, PPF, VPD, PPFD, temperatura del agua, ph, conductividad electrica, nivel de agua. Adicionalmente, el usuario podra visualizar la fecha y hora en la que se tomaron las ultimas mediciones.
+2. Para monitorear el estado de los actuadores del sistema, el usuario podra visualizar en la parte superior derecha para pantallas grandes y en la parte superior para pantallas pequeñas ubicado en la pagina de inicio de la aplicacion, el estado de los actuadores del sistema. El usuario podra visualizar si los actuadores estan encendidos o apagados. Asi como tambien, podra visualizar el estado de las conexiones del sistema.
+3. Para interactuar con los actuadores del sistema, el usuario podra acceder a la pagina actuadores desde el menu de navegacion ubicado en la parte superior para pantallas grandes y en la parte inferior para pantallas pequeñas. En esta seccion, el usuario podra visualizar el estado de los actuadores del sistema representados por botones de encendido y apagado. El usuario podra cambiar el estado de los actuadores del sistema, encendiendo y/o apagando actuadores.
+4. Para interactuar con el sistema de control de Ph y Electroconductividad, el usuario podra acceder a la pagina de control desde el menu de navegacion ubicado en la parte superior para pantallas grandes y en la parte inferior para pantallas pequeñas. En esta seccion, el usuario podra visualizar el valor actual deseado de Ph y Electroconductividad. Adicionalmente, el usuario los podra modificar a su gusto y enviarlos al sistema de control.
 
 
 ## Apendice A: Instalacion de Docker Compose en Ubuntu 22.04 LTS
