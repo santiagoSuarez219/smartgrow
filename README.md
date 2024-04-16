@@ -152,7 +152,7 @@ sudo docker compose up -d
 
 ## Funcionamiento
 1. Para monitorear el estado de las variables ambientales en tiempo real, el usuario debe acceder a la pagina de inicio de la aplicación. En el menu de navegacion ubicado en la parte superior  para pantallas grandes y en la parte inferior para pantallas pequeñas como celulares, el usuario podra navegar entre la seccion Hidroponico y Cultivo. En estas secciones, el usuario encontrara valores en tiempo real de las variables ambientales como la temperatura, la humedad, dioxido de carbono, PPF, VPD, PPFD, temperatura del agua, ph, conductividad electrica, nivel de agua. Adicionalmente, el usuario podra visualizar la fecha y hora en la que se tomaron las ultimas mediciones.
-2. Para monitorear el estado de los actuadores del sistema, el usuario podra visualizar en la parte superior derecha para pantallas grandes y en la parte superior para pantallas pequeñas ubicado en la pagina de inicio de la aplicacion, el estado de los actuadores del sistema. El usuario podra visualizar si los actuadores estan encendidos o apagados. Asi como tambien, podra visualizar el estado de las conexiones del sistema.
+2. Para monitorear el estado de los actuadores del sistema, el usuario podrá visualizar algunos indicadores ubicados en la parte superior derecha para pantallas grandes y en la parte superior para pantallas pequeñas. El usuario podrá visualizar si los actuadores están encendidos o apagados. Así como también, podrá visualizar el estado de las conexiones del sistema.
 3. Para interactuar con los actuadores del sistema, el usuario podra acceder a la pagina actuadores desde el menu de navegacion ubicado en la parte superior para pantallas grandes y en la parte inferior para pantallas pequeñas. En esta seccion, el usuario podra visualizar el estado de los actuadores del sistema representados por botones de encendido y apagado. El usuario podra cambiar el estado de los actuadores del sistema, encendiendo y/o apagando actuadores.
 4. Para interactuar con el sistema de control de Ph y Electroconductividad, el usuario podra acceder a la pagina de control desde el menu de navegacion ubicado en la parte superior para pantallas grandes y en la parte inferior para pantallas pequeñas. En esta seccion, el usuario podra visualizar el valor actual deseado de Ph y Electroconductividad. Adicionalmente, el usuario los podra modificar a su gusto y enviarlos al sistema de control.
 
@@ -231,7 +231,23 @@ docker compose --version
 ```
 
 ## Apendice B: Instalacion de Docker Compose en Windows 11
-https://docs.docker.com/desktop/install/windows-install/
+Para instalar Docker Compose en Windows 11, el usuario puede instalar Docker Desktop. Para esto, el usuario puede seguir los siguientes pasos:
+
+1. Descargar el instalador de Docker Desktop desde el sitio web oficial de Docker. Para esto, el usuario puede acceder al siguiente enlace:
+
+[Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+2. Ejecutar el instalador de Docker Desktop y seguir las instrucciones del asistente de instalación.
+3. Iniciar Docker Desktop y esperar a que el motor de Docker esté en funcionamiento.
+4. Configurar Docker Desktop para que utilice WSL 2. Para esto, el usuario puede seguir los siguientes pasos:
+5. Hacer clic en el icono de Docker Desktop ubicado en la bandeja del sistema.
+6. Seleccionar la opción de Settings.
+7. Hacer clic en la opción de Resources.
+8. Hacer clic en la opción de WSL Integration.
+9. Seleccionar la casilla de verificación de Enable integration with my default WSL distro.
+10. Hacer click en la opcion de General y seleccionar la opcion de *Use the WSL 2 based engine*
+11. Hacer clic en la opción de Apply & Restart.
+
 
 ## Apendice C: Instalacion y configuracion de git
 Para instalar git en Ubuntu 22.04 LTS, el usuario puede utilizar el siguiente comando:
@@ -298,12 +314,10 @@ Despues de abrir la aplicacion de Windows Terminal, el usuario debe configurar U
 1. Ingresar a la aplicación de Windows Terminal.
 2. Hacer clic en la opción de la flecha hacia abajo ubicada en la parte superior izquierda de la ventana.
 3. Hacer clic en la opción de Settings.
-4. Hacer clic en la opción de Profiles.
+4. Hacer clic en la opción de Default Profile.
 5. Hacer clic en la opción de Ubuntu.
-6. Hacer clic en la opción de Command line.
-7. Ingresar el siguiente comando en el campo de Command line:
-
-```bash
+6. Hacer clic en el botón de Save.
+7. Reiniciar la aplicación de Windows Terminal.
 
 
 
